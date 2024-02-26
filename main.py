@@ -8,10 +8,10 @@ import Internal_LED
 
 if __name__ == "__main__":
     Internal_LED.ON()
-    motor_driver_pins = [7, 6, 26, 27]
+    motor_driver_pins = [6, 7, 27, 26]
     frequency = 1000
-    alefbot = AlefBot(motor_driver_pins, frequency, ssid="Orange-7C8B", password="YG91AHL2GLJ", repo_url = "https://raw.githubusercontent.com/Seif-El-Dein/tesee/main/", filename= "test1.py")
-    
+    alefbot = AlefBot(motor_driver_pins, frequency, ssid="Orange-Seif", password="t01001007352", repo_url = "https://raw.githubusercontent.com/Seif-El-Dein/tesee/main/", filename= "main.py")
+    command = "None"
     alefbot.set_Speed(30)
     server_status = True
     counter = 0
@@ -20,28 +20,27 @@ if __name__ == "__main__":
         while True:
             alefbot.key = "None"
             alefbot.reset_command()
-            print(alefbot.command_handler.wifi.isconnected())
             if alefbot.command_handler.wifi.isconnected():
-                if server_status == False:
+                if alefbot.command_handler.Server == False:
+                    sleep(20)
                     alefbot.command_handler.reconnect_to_broker()
-                    server_status = True
+                    alefbot.command_handler.Server = True
                 Internal_LED.ON()
                 command = alefbot.waiting_commands()
                 if command is None:
                     command = alefbot.reset_command()
             elif not alefbot.command_handler.wifi.isconnected():
+                alefbot.command_handler.Server = False
                 Internal_LED.ON(delay=0.02)
                 Internal_LED.OFF(delay=0.02)
-                server_status = False 
             alefbot.readCard()
-            print(command)
             
             if command == "FIRMWARE":
                 alefbot.command_handler.download_and_install_update_if_available()
                 
             if command == "say about":
                 alefbot.play_voiceTrack(language= "Arabic", catagory= "Sentence", track_name="About me")
-                sleep(18)
+                sleep(20)
             
             if ',' in command:
                 print(command)
