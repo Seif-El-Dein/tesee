@@ -105,7 +105,7 @@ if __name__ == "__main__":
                 alefbot.play_voiceTrack(language= "English", catagory= "Word", track_name="Cat")
                 sleep_ms(1000)
                 
-            elif alefbot.key == Arabic_letters.get("Alef"):
+            elif alefbot.key == Arabic_letters.get("Alef") or command == "alef":
                 alefbot.play_voiceTrack(language= "Arabic", catagory= "Letter", track_name="Alef")
                 sleep_ms(1000)
             
