@@ -33,12 +33,14 @@ if __name__ == "__main__":
                 Internal_LED.OFF(delay=0.02)
             alefbot.readCard()
             
-            if command == "FIRMWARE":
+            if command == "Firmware":
                 alefbot.command_handler.download_and_install_update_if_available()
                 
             if command == "say about":
                 alefbot.play_voiceTrack(language= "Arabic", catagory= "Sentence", track_name="About me")
                 sleep(20)
+                alefbot.play_voiceTrack(language= "English", catagory= "Sentence", track_name="About me")
+                sleep(39)
             
             if ',' in command:
                 print(command)
@@ -105,10 +107,38 @@ if __name__ == "__main__":
                 alefbot.play_voiceTrack(language= "English", catagory= "Word", track_name="Cat")
                 sleep_ms(1000)
                 
+            elif command == "C":
+                alefbot.play_voiceTrack(language= "English", catagory= "Letter", track_name="C")
+                sleep_ms(1000)
+
+            elif command == "A":
+                alefbot.play_voiceTrack(language= "English", catagory= "Letter", track_name="A")
+                sleep_ms(1000)
+
+            elif command == "T":
+                alefbot.play_voiceTrack(language= "English", catagory= "Letter", track_name="T")
+                sleep_ms(1000)
+                
             elif alefbot.key == Arabic_letters.get("Alef") or command == "alef":
                 alefbot.play_voiceTrack(language= "Arabic", catagory= "Letter", track_name="Alef")
                 sleep_ms(1000)
-            
+                
+            elif command == "laam":
+                alefbot.play_voiceTrack(language= "Arabic", catagory= "Letter", track_name="Lam")
+                sleep_ms(1000)
+
+            elif command == "jeem":
+                alefbot.play_voiceTrack(language= "Arabic", catagory= "Letter", track_name="Geem")
+                sleep_ms(1000)
+
+            elif command == "mem":
+                alefbot.play_voiceTrack(language= "Arabic", catagory= "Letter", track_name="Meem")
+                sleep_ms(1000)
+
+            elif command == "jamal":
+                alefbot.play_voiceTrack(language= "Arabic", catagory= "Word", track_name="Camel")
+                sleep_ms(1000)
+                
             else:
                 alefbot.Stop()
                 
