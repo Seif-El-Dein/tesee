@@ -12,7 +12,7 @@ if __name__ == "__main__":
     frequency = 1000
     alefbot = AlefBot(motor_driver_pins, frequency, ssid="AlefBot", password="123456789", repo_url = "https://raw.githubusercontent.com/Seif-El-Dein/tesee/main/", filename= "main.py")
     command = "None"
-    alefbot_maxSpeed = 50
+    alefbot_maxSpeed = 55
     counter = 0
     lock = _thread.allocate_lock()
     try:
