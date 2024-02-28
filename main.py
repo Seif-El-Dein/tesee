@@ -48,12 +48,12 @@ if __name__ == "__main__":
                 print(scenario_list)
                 for block in scenario_list:
                     if block == "Forward":
-                        alefbot.move_Forward(moving_delay_ms=7, max_speed=alefbot_maxSpeed)
+                        alefbot.move_Forward(moving_delay_ms=0, max_speed=alefbot_maxSpeed)
                         alefbot.blink_eyes()
                         print(block)
 
                     elif block == "Backward":
-                        alefbot.move_Backward(moving_delay_ms=7, max_speed=alefbot_maxSpeed)
+                        alefbot.move_Backward(moving_delay_ms=0, max_speed=alefbot_maxSpeed)
                         alefbot.blink_eyes()
                         print(block)
                 
