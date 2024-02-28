@@ -59,13 +59,13 @@ if __name__ == "__main__":
                 
                     elif block == "Right":
                         alefbot.look_right()
-                        alefbot.turnRight(moving_delay_ms=5)
+                        alefbot.turnRight(moving_delay_ms=6)
                         alefbot.blink_eyes()
                         print(block)
                 
                     elif block == "Left":
                         alefbot.look_left()
-                        alefbot.turnLeft(moving_delay_ms=5)
+                        alefbot.turnLeft(moving_delay_ms=6)
                         alefbot.blink_eyes()
                         print(block)
                     alefbot.Stop(stop_delay_ms=1000)
@@ -82,24 +82,24 @@ if __name__ == "__main__":
                 print(equation)
 
             if command == "Forward":
-                alefbot.move_Forward(moving_delay_ms=10)
+                alefbot.move_Forward(moving_delay_ms=3)
                 alefbot.blink_eyes()
                 print(command)
 
             elif command == "Backward":
-                alefbot.move_Backward(moving_delay_ms=10)
+                alefbot.move_Backward(moving_delay_ms=3)
                 alefbot.blink_eyes()
                 print(command)
                 
             elif command == "Right":
                 alefbot.look_right()
-                alefbot.turnRight(moving_delay_ms=5)
+                alefbot.turnRight(moving_delay_ms=6)
                 alefbot.blink_eyes()
                 print(command)
                 
             elif command == "Left":
                 alefbot.look_left()
-                alefbot.turnLeft(moving_delay_ms=5)
+                alefbot.turnLeft(moving_delay_ms=6)
                 alefbot.blink_eyes()
                 print(command)
             
