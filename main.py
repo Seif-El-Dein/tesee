@@ -14,6 +14,7 @@ if __name__ == "__main__":
     command = "None"
     alefbot_maxSpeed = 45
     counter = 0
+    interaction_counter = 0
     lock = _thread.allocate_lock()
     try:
         while True:
@@ -158,11 +159,24 @@ if __name__ == "__main__":
                     
             counter +=1
             if counter == 50:
+                interaction_counter +=1
                 counter = 0
                 lock.acquire()
                 thread = _thread.start_new_thread(alefbot.blink_eyes, ())
                 lock.release()
-                
+            
+            if interaction_counter == 5:
+                alefbot.look_right()
+                alefbot.turnRight(moving_delay_ms=7, max_speed=48)
+                alefbot.Stop()
+                alefbot.look_left()
+                alefbot.turnLeft(moving_delay_ms=14, max_speed=48)
+                alefbot.Stop()
+                alefbot.look_right()
+                alefbot.turnRight(moving_delay_ms=7, max_speed=48)
+                alefbot.Stop()
+                alefbot.blink_eyes()
+                interaction_counter = 0
 
             
     except KeyboardInterrupt:
