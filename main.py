@@ -61,11 +61,15 @@ if __name__ == "__main__":
                         alefbot.look_right()
                         alefbot.turnRight(moving_delay_ms=7, max_speed=47)
                         alefbot.blink_eyes()
+                        alefbot.move_Forward(moving_delay_ms=0, max_speed=alefbot_maxSpeed)
+                        alefbot.blink_eyes()
                         print(block)
                 
                     elif block == "Left":
                         alefbot.look_left()
                         alefbot.turnLeft(moving_delay_ms=7, max_speed=47)
+                        alefbot.blink_eyes()
+                        alefbot.move_Forward(moving_delay_ms=0, max_speed=alefbot_maxSpeed)
                         alefbot.blink_eyes()
                         print(block)
                     alefbot.Stop(stop_delay_ms=600)
