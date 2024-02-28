@@ -59,7 +59,7 @@ if __name__ == "__main__":
                 
                     elif block == "Right":
                         alefbot.look_right()
-                        alefbot.turnRight(moving_delay_ms=7, max_speed=47)
+                        alefbot.turnRight(moving_delay_ms=7, max_speed=48)
                         alefbot.Stop()
                         alefbot.blink_eyes()
                         sleep(0.6)
@@ -69,7 +69,7 @@ if __name__ == "__main__":
                 
                     elif block == "Left":
                         alefbot.look_left()
-                        alefbot.turnLeft(moving_delay_ms=7, max_speed=47)
+                        alefbot.turnLeft(moving_delay_ms=7, max_speed=48)
                         alefbot.Stop()
                         alefbot.blink_eyes()
                         sleep(0.6)
@@ -101,13 +101,13 @@ if __name__ == "__main__":
                 
             elif command == "Right":
                 alefbot.look_right()
-                alefbot.turnRight(moving_delay_ms=7, max_speed=47)
+                alefbot.turnRight(moving_delay_ms=7, max_speed=48)
                 alefbot.blink_eyes()
                 print(command)
                 
             elif command == "Left":
                 alefbot.look_left()
-                alefbot.turnLeft(moving_delay_ms=7, max_speed=47)
+                alefbot.turnLeft(moving_delay_ms=7, max_speed=48)
                 alefbot.blink_eyes()
                 print(command)
             
