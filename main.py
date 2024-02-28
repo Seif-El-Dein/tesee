@@ -12,7 +12,7 @@ if __name__ == "__main__":
     frequency = 1000
     alefbot = AlefBot(motor_driver_pins, frequency, ssid="AlefBot", password="123456789", repo_url = "https://raw.githubusercontent.com/Seif-El-Dein/tesee/main/", filename= "main.py")
     command = "None"
-    alefbot_maxSpeed = 55
+    alefbot_maxSpeed = 45
     counter = 0
     lock = _thread.allocate_lock()
     try:
@@ -48,24 +48,24 @@ if __name__ == "__main__":
                 print(scenario_list)
                 for block in scenario_list:
                     if block == "Forward":
-                        alefbot.move_Forward(moving_delay_ms=10, max_speed=alefbot_maxSpeed)
+                        alefbot.move_Forward(moving_delay_ms=7, max_speed=alefbot_maxSpeed)
                         alefbot.blink_eyes()
                         print(block)
 
                     elif block == "Backward":
-                        alefbot.move_Backward(moving_delay_ms=10, max_speed=alefbot_maxSpeed)
+                        alefbot.move_Backward(moving_delay_ms=7, max_speed=alefbot_maxSpeed)
                         alefbot.blink_eyes()
                         print(block)
                 
                     elif block == "Right":
                         alefbot.look_right()
-                        alefbot.turnRight(moving_delay_ms=20)
+                        alefbot.turnRight(moving_delay_ms=5)
                         alefbot.blink_eyes()
                         print(block)
                 
                     elif block == "Left":
                         alefbot.look_left()
-                        alefbot.turnLeft(moving_delay_ms=20)
+                        alefbot.turnLeft(moving_delay_ms=5)
                         alefbot.blink_eyes()
                         print(block)
                     alefbot.Stop(stop_delay_ms=1000)
@@ -93,13 +93,13 @@ if __name__ == "__main__":
                 
             elif command == "Right":
                 alefbot.look_right()
-                alefbot.turnRight(moving_delay_ms=20)
+                alefbot.turnRight(moving_delay_ms=5)
                 alefbot.blink_eyes()
                 print(command)
                 
             elif command == "Left":
                 alefbot.look_left()
-                alefbot.turnLeft(moving_delay_ms=20)
+                alefbot.turnLeft(moving_delay_ms=5)
                 alefbot.blink_eyes()
                 print(command)
             
@@ -143,7 +143,9 @@ if __name__ == "__main__":
                 alefbot.Stop()
                 
             if alefbot.key == WiFi_reconnect.get("WiFi"):
-                alefbot.reset()
+#                 alefbot.reset()
+                alefbot.play_voiceTrack(language= "Arabic", catagory= "Letter", track_name="Alef")
+                sleep_ms(1000)
 
                     
             counter +=1
