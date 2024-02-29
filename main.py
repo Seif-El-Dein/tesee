@@ -42,8 +42,10 @@ if __name__ == "__main__":
                 sleep(20)
                 alefbot.play_voiceTrack(language= "English", catagory= "Sentence", track_name="About me")
                 sleep(39)
+                interaction_counter = 0
             
             if ',' in command:
+                interaction_counter = 0
                 print(command)
                 scenario_list = command.split(',')
                 print(scenario_list)
@@ -80,6 +82,7 @@ if __name__ == "__main__":
                     alefbot.Stop(stop_delay_ms=600)
                  
             if '=' in command:
+                interaction_counter = 0
                 equation = command[0:3]
                 result = command[4:]
                 
@@ -91,44 +94,53 @@ if __name__ == "__main__":
                 print(equation)
 
             if command == "Forward":
+                interaction_counter = 0
                 alefbot.move_Forward(moving_delay_ms=0)
                 alefbot.blink_eyes()
                 print(command)
 
             elif command == "Backward":
+                interaction_counter = 0
                 alefbot.move_Backward(moving_delay_ms=0)
                 alefbot.blink_eyes()
                 print(command)
                 
             elif command == "Right":
+                interaction_counter = 0
                 alefbot.look_right()
                 alefbot.turnRight(moving_delay_ms=7, max_speed=48)
                 alefbot.blink_eyes()
                 print(command)
                 
             elif command == "Left":
+                interaction_counter = 0
                 alefbot.look_left()
                 alefbot.turnLeft(moving_delay_ms=7, max_speed=48)
                 alefbot.blink_eyes()
                 print(command)
             
             elif alefbot.key == English_words.get("Cat") or command == "CAT":
+                interaction_counter = 0
                 alefbot.play_voiceTrack(language= "English", catagory= "Word", track_name="Cat")
                 sleep_ms(1000)
                 
             elif command == "C":
+                interaction_counter = 0
                 alefbot.play_voiceTrack(language= "English", catagory= "Letter", track_name="C")
                 sleep_ms(1000)
 
             elif command == "A":
+                interaction_counter = 0
                 alefbot.play_voiceTrack(language= "English", catagory= "Letter", track_name="A")
                 sleep_ms(1000)
 
             elif command == "T":
+                interaction_counter = 0
                 alefbot.play_voiceTrack(language= "English", catagory= "Letter", track_name="T")
                 sleep_ms(1000)
                 
             elif alefbot.key == Arabic_letters.get("Alef") or command == "alef":
+                interaction_counter = 0
                 alefbot.play_voiceTrack(language= "Arabic", catagory= "Letter", track_name="Alef")
                 sleep_ms(1000)
                 
@@ -137,14 +149,17 @@ if __name__ == "__main__":
                 sleep_ms(1000)
 
             elif command == "jeem":
+                interaction_counter = 0
                 alefbot.play_voiceTrack(language= "Arabic", catagory= "Letter", track_name="Geem")
                 sleep_ms(1000)
 
             elif command == "mem":
+                interaction_counter = 0
                 alefbot.play_voiceTrack(language= "Arabic", catagory= "Letter", track_name="Meem")
                 sleep_ms(1000)
 
             elif command == "jamal":
+                interaction_counter = 0
                 alefbot.play_voiceTrack(language= "Arabic", catagory= "Word", track_name="Camel")
                 sleep_ms(1000)
                 
@@ -152,6 +167,7 @@ if __name__ == "__main__":
                 alefbot.Stop()
                 
             if alefbot.key == WiFi_reconnect.get("WiFi"):
+                interaction_counter = 0
 #                 alefbot.reset()
                 alefbot.play_voiceTrack(language= "Arabic", catagory= "Letter", track_name="Alef")
                 sleep_ms(1000)
@@ -166,6 +182,7 @@ if __name__ == "__main__":
                 lock.release()
             
             if interaction_counter == 5:
+                sleep_ms(1000)
                 alefbot.look_right()
                 alefbot.turnRight(moving_delay_ms=7, max_speed=48)
                 alefbot.Stop()
