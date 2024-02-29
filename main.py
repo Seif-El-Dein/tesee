@@ -181,8 +181,8 @@ if __name__ == "__main__":
                 thread = _thread.start_new_thread(alefbot.blink_eyes, ())
                 lock.release()
             
-            if interaction_counter == 5:
-                sleep_ms(1000)
+            if interaction_counter == 10:
+                sleep_ms(200)
                 alefbot.look_right()
                 alefbot.turnRight(moving_delay_ms=7, max_speed=48)
                 alefbot.Stop()
